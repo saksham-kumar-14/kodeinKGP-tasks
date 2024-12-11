@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <a href="#search-div">Search</a>
+        <a href="#weather-container">Weather</a>
+        <a href="#about-container">About</a>
+        <a href="#footer-container">Footer</a>
+    </nav>
+
+    <!--Search bar-->
+    <div id="search-div" class="search-div">
+        <input class="search-bar" placeholder="Enter a city name"/>
+        <button class="realtime-data-btn">Realtime Data</button>
+        <button class="forecast-btn">Week Forcast</button>
+    </div>
+
+    <!--Weather Details-->
+    <div class="weather-container" id="weather-container">
+        <div class="temp-toggle-container">
+            <button class="temp-toggle-btn">C</button>
+        </div>
+        <div id="message" class="message">
+            <p>Search for a city</p>
+        </div>
+    </div>
+
+    <!--About-->
+    <div class="about-container" id="about-container">
+        <h2 class="about-heading">About</h2>
+        <p>This is a weather dashboard.</p>
+        <img src="assets/about-img.png" alt="Image">
+    </div>
+
+    <!--Footer-->
+    <div class="footer-container" id="footer-container">
+        <div>
+            <a target="_blank" href="https://github.com/saksham-kumar-14">
+                <img src="assets/github.png" alt="Github">
+            </a>
+            <a target="_blank" href="https://linkedin.com/in/saksham-kumar-683930224/">
+                <img src="assets/linkedin.png" alt="Linkedin">
+            </a>
+        </div>
+
+        <a href="#" class="to-top">
+            ↥
+        </a>
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
