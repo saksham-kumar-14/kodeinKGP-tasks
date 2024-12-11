@@ -45,6 +45,8 @@ def select(grid):
                 grid[i][j] = 'O'
                 cscore = cal_score(grid, i, j, 'X')
                 grid[i][j] = '.'
+                if i == 0 and j == 0:
+                    print(cscore)
                 if cscore > score:
                     score = cscore
                     ans = (i, j)

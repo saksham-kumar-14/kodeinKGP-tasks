@@ -13,6 +13,14 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// hamburger styling
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbar-menu");
+hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+})
+
 // Search functionality
 const searchInput = document.querySelector(".search-bar");
 const realTimeBtn = document.querySelector(".realtime-data-btn");
@@ -76,11 +84,11 @@ const printForcast = (data) => {
         date.innerHTML = `Date: ${e.date}`;
         if(temp_c){
             maxtemp.innerHTML = `Max Temp: ${e.day.maxtemp_c} C`;
-            mintemp.innerHTML = `Max Temp: ${e.day.mintemp_c} C`;
+            mintemp.innerHTML = `Min Temp: ${e.day.mintemp_c} C`;
             avgtemp.innerHTML = `Avg Temp: ${e.day.avgtemp_c} C`;
         }else{
             maxtemp.innerHTML = `Max Temp: ${e.day.maxtemp_f} F`;
-            mintemp.innerHTML = `Max Temp: ${e.day.mintemp_f} F`;
+            mintemp.innerHTML = `Min Temp: ${e.day.mintemp_f} F`;
             avgtemp.innerHTML = `Avg Temp: ${e.day.avgtemp_f} F`;
         }
         windSpeed.innerHTML = `Max wind speed: ${e.day.maxwind_mph} mph`;
