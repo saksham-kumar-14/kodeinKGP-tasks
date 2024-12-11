@@ -28,6 +28,7 @@ const printRealtime = (data) =>{
     conditionIcon = conditionIcon.slice(2, conditionIcon.length);
     document.getElementById("weather-container").style.backgroundImage = `url('https://${conditionIcon}')`
 
+    let container = document.createElement("div");
     let time = document.createElement("p");
     let location = document.createElement("p");
     let current = document.createElement("p");
@@ -51,12 +52,17 @@ const printRealtime = (data) =>{
 
     let list = [time, location, current, windSpeed, humidity, pressure, temp];
     list.map((e)=>{
-        msg.appendChild(e);
-    })
+        container.appendChild(e);
+    });
+    msg.appendChild(container);
 }
 
 const printForcast = (data) => {
     document.getElementById("weather-container").style.backgroundImage = `url('assets/about-img.png')`
+    let head = document.createElement("p");
+    head.innerHTML = `Location: ${data.location.name}, ${data.location.region}, ${data.location.country}
+    (Lat: ${data.location.lat}, Lon: ${data.location.lon})`;
+    msg.appendChild(head);
     data.forecast.forecastday.map((e)=>{
         let child = document.createElement("div");
         let date = document.createElement("p");
@@ -67,7 +73,7 @@ const printForcast = (data) => {
         let current = document.createElement("p");
         let humidity = document.createElement("p");
 
-        date.innerHTML = e.date;
+        date.innerHTML = `Date: ${e.date}`;
         if(temp_c){
             maxtemp.innerHTML = `Max Temp: ${e.day.maxtemp_c} C`;
             mintemp.innerHTML = `Max Temp: ${e.day.mintemp_c} C`;
@@ -121,7 +127,7 @@ ForecastBtn.addEventListener('click', ()=>{
 
 // temperature toggle button
 const tempToggle = () => {
-    let tempTogContainer = document.querySelector(".temp-toggle-container")
+    let tempTogContainer = document.querySelector(".temp-toggle-subcontainer")
     let tempTogBtn = document.querySelector(".temp-toggle-btn");
     tempTogBtn.addEventListener('click', ()=>{
         if(tempTogBtn.innerHTML == 'C'){
